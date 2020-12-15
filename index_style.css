@@ -459,6 +459,53 @@ iframe {
     font-size: 28px;
 }
 
+.projectsTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.projectsTable th {
+    font-size: 38px;
+    color: white;
+}
+
+.projectsTable td {
+    font-size: 35px;
+    color: white;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 3px 3px;
+}
+
+.projectsTable img {
+    width: 100%;
+    height: 800px;
+    height: auto;
+    border: 1px solid #dddddd;
+    -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+}
+
+.projectsTable td:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-filter: brightness(60%);
+   filter: brightness(60%);
+    cursor: pointer;
+}
+
+.gif {
+    visibility: hidden;
+}
+
+.projectsTable a {
+    text-decoration: none;
+    color: white;
+}
 @media screen and (max-width: 1000px){
     .fa {
         width: 40px;
