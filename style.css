@@ -1,0 +1,783 @@
+/*Ben Miller
+ *V00928738
+ *2020/02/28
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    
+}
+
+.socials {
+    position: fixed;
+    top: 0;
+    height: 12%;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 1.3s;
+    text-align: center;
+    z-index: 21;
+}
+
+.navButton {
+    position: fixed;
+    top: 0;
+    color: white;
+    margin-top: 0.8%;
+    width: 90px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: inline-block;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.topbar, .midbar, .botbar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .topbar {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .midbar {
+    opacity: 0;
+}
+
+.change .botbar {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-9px, -7px);
+}
+
+.centered {
+
+width: 50%;
+  margin: 0 auto;
+
+}
+
+.header {
+    font-family: 'Odibee Sans', cursive;
+    font-size: 22px;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    height: 12%;
+    width: 100%;
+    color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 1.3s;
+    z-index: 20;
+}
+
+.fa {
+    font-size: 20px;
+    width: 36px;
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    margin: 8px;
+    padding: 10px;
+    
+    border-radius: 20%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Odibee Sans', cursive;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlaySocials {
+    display: none;
+}
+
+p {
+    font-size: 50px;
+}
+/*
+@media screen and (max-height: 500px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+    
+    .topbar, .midbar, .botbar {
+        width: 35px;
+        height: 4px;
+        background-color: white;
+        margin: 6px 0;
+        margin-top: 0px;
+        padding-top: 0px;
+        transition: 0.4s;
+    }
+    
+    .navButton {
+        position: fixed;
+        top: 0;
+        color: white;
+        margin-top: 0.5%;
+        width: 3%;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        display: inline-block;
+        z-index: 999;
+        cursor: pointer;
+    }
+}
+*/
+
+
+.socials #socialmedia {
+    z-index: 90000000;
+}
+
+.overlay #currentPage {
+    color: white !important;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    font-family: 'Odibee Sans';
+    display: block;
+    text-align: center;
+    width: 90%;
+    height: 70%;
+    bottom: 90px;
+    position: absolute;
+    color: black;
+    overflow-y: visible;
+    text-align: center;
+    margin: 5%;
+}
+
+#table1 {
+    color: white;
+    text-align: center;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 3px solid clear;
+    table-layout: fixed;
+    width: 80%;
+    height: 30%;
+    font-size: 30px;
+    margin-top: 6%;
+    border-collapse: collapse;
+    font-family: 'Roboto Slab';
+}
+
+#table2 {
+    color: white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    table-layout: fixed;
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 6%;
+    font-family: 'Roboto Slab';
+}
+
+
+th, td, tr {
+
+    width: 30%;
+
+}
+
+hr {
+    border: 4px dashed black;
+    width: 60%;
+}
+
+#leftColTop {
+    background-color: RGBA(127, 91, 115,0.8);
+    color: white;
+    width 10%;
+    font-size: 24px;
+    border-right: 3px solid clear;
+    padding: 5px 10px 10px 10px;
+}
+
+#leftColHeader {
+    /*background-color: RGBA(237, 45, 119, 0.3);*/
+    background-color: RGBA(127, 91, 115, 0.8);
+    color: #67BAA7;
+    width 10%;
+    font-size: 34px;
+    border-right: 3px solid clear;
+    padding: 20px 10px 0px 10px;
+}
+
+#rightColTop {
+    /*background-color: RGBA(237, 45, 119, 0.8);*/
+    background-color: rgba(25, 109, 149, 0.8);
+    width: 50%;
+    font-size: 24px;
+    padding: 5px 10px 10px 10px;
+    
+}
+
+#rightColTop h3 {
+    color: #67BAA7;
+}
+
+#leftColBot {
+    background-color: RGBA(193, 136, 173, 0.8);
+    width 10%;
+    font-size: 24px;
+    padding: 10px;
+    border-right: 3px solid clear;
+}
+
+#rightColBot {
+    background-color: rgba(240,211,255,0.8);
+    
+    width: 50%;
+    font-size: 24px;
+    padding: 10px;
+}
+
+#rightColBotContent {
+    background-color: rgba(240,211,255,0.8);
+    table-layout: fixed;
+    width 50%;
+    font-size: 18px;
+    padding: 10px;
+    border-right: 3px solid clear;
+    text-align: left;
+}
+
+#rightColBotHead {
+    /*background-color: rgba(240,211,255,0.8);*/
+    /*background-color: rgba(88, 117, 160,0.8);*/
+    
+    background-color: rgba(88, 117, 160, 0.8);
+    width: 50%;
+    font-size: 24px;
+    padding: 15px;
+    text-align: left;
+}
+
+#rightColBotHead h3 {
+    color: #67BAA7;
+}
+
+#leftColBotHead {
+    /*background-color: RGBA(193, 136, 173, 0.8);*/
+    background-color: rgba(116, 102, 141, 0.8);
+    width 10%;
+    font-size: 24px;
+    padding: 15px;
+    border-right: 3px solid clear;
+    text-align: left;
+}
+
+#leftColBotHead h3 {
+    color: #67BAA7;
+}
+
+#leftColBotContent {
+    background-color: RGBA(193, 136, 173, 0.8);
+    width 10%;
+    font-size: 18px;
+    padding: 10px;
+    border-right: 3px solid clear;
+    text-align: left;
+}
+
+li {
+    padding: 5px;
+    font-size: 26px;
+}
+
+#leftColBotDesc {
+    background-color: RGBA(193, 136, 173,0.8);
+    width 10%;
+    font-size: 56px;
+    padding: 10px;
+    border-right: 3px solid clear;
+    text-align: left;
+}
+
+#tableTitle {
+    font-size: 100px;
+}
+
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#student {
+    font-size: 20px;
+    color: white;
+}
+
+iframe {
+    margin: 10px;
+}
+
+.aboutHeader {
+    margin: 3%;
+}
+
+.loves {
+    background-color: RGBA(191, 25, 58, 0.6);
+    padding: 5%;
+    margin: 3%;
+    border: 2px solid white;
+}
+
+.likes {
+    background-color: RGBA(0, 121, 49, 0.6);
+    padding: 5%;
+    margin: 3%;
+    border: 2px solid white;
+}
+
+.dislikes {
+    background-color: RGBA(56,82,224,0.6);
+    padding: 5%;
+    margin: 3%;
+    border: 2px solid white;
+}
+
+.loves img {
+    overflow-x: hidden;
+    width: 70%;
+    height: auto;
+    border: 14px solid white;
+}
+
+.dislikes img {
+     overflow-x: hidden;
+    width: 70%;
+    height: auto;
+    border: 14px solid white;
+}
+
+.likes img {
+     overflow-x: hidden;
+    width: 70%;
+    height: auto;
+    border: 14px solid white;
+}
+
+#orange {
+    color: orange !important;
+}
+
+#recipeHeader {
+    text-align: left;
+    font-size: 28px;
+}
+
+.projectsTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.projectsTable th {
+    font-size: 38px;
+    color: black;
+}
+
+.projectsTable td {
+    font-size: 35px;
+    color: black;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 3px 3px;
+}
+
+.projectsTable img {
+    width: 100%;
+    height: 800px;
+    height: auto;
+    border: 1px solid #dddddd;
+    -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+}
+
+.projectsTable td:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-filter: brightness(60%);
+   filter: brightness(60%);
+    cursor: pointer;
+}
+
+.gif {
+    visibility: hidden;
+}
+
+.projectsTable a {
+    text-decoration: none;
+    color: black;
+}
+@media screen and (max-width: 1000px){
+    .fa {
+        width: 40px;
+        font-size: 7px;
+        padding-left: 10px;
+        margin: 2px;
+        padding-top: 16px;
+        height: 50px;
+    }
+    
+    .header {
+        font-family: 'Odibee Sans', cursive;
+        font-size: 60px;
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, 0.7);
+        height: 12%;
+        width: 100%;
+        color: #f1f1f1;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: 1.3s;
+        z-index: 20;
+    }
+    
+    .navButton {
+        position: fixed;
+        top: 0;
+        color: white;
+        margin-top: 0.8%;
+        width: 90px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        display: inline-block;
+        z-index: 999;
+        cursor: pointer;
+}
+
+    .topbar, .midbar, .botbar {
+        width: 55px;
+        height: 10px;
+        background-color: white;
+        margin: 9px 0;
+        transition: 0.4s;
+    }
+
+    .change .topbar {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-15px, 6px);
+    }
+
+    .change .midbar {
+        opacity: 0;
+    }
+
+    .change .botbar {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-20px, -10px);
+    }
+    
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 80px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .socials {
+        display: none;
+    }
+    
+    .overlaySocials {
+        text-align: center;
+        bottom: 0;
+        color: #f1f1f1;
+        width: 100%;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1.3s;
+        text-align: center;
+        z-index: 21;
+    }
+    
+    .fa {
+        font-size: 90px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        text-decoration: none;
+        margin: 20px;
+        padding: 200px;
+        border-radius: 20%;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+
+    .fa-linkedin {
+        background: #007bb5;
+        color: white;
+    }
+    
+    p {
+        font-size: 110px;
+    }
+    
+    #table1 {
+        color: white;
+        text-align: center;
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        border-left: 2px solid white;
+        border-bottom: 3px solid clear;
+        table-layout: fixed;
+        width: 100%;
+        height: 30%;
+        font-size: 30px;
+        margin-top: 10%;
+        border-collapse: collapse;
+    }
+
+    #table2 {
+        color: white;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        table-layout: fixed;
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        margin-bottom: 10%;
+    }
+
+
+    th, td, tr {
+
+        width: 30%;
+
+    }
+
+    #leftColBotContent {
+        background-color: RGBA(193, 136, 173, 0.8);
+        width 30%;
+        font-size: 28px;
+        padding: 10px;
+        border-right: 3px solid clear;
+        text-align: left;
+    }
+  
+    #rightColBotContent {
+        background-color: rgba(240,211,255,0.8);
+        width 70%;
+        font-size: 28px;
+        padding: 10px;
+        border-right: 3px solid clear;
+        text-align: left;
+    }
+    
+
+   #rightColTop {
+        /*background-color: RGBA(237, 45, 119, 0.8);*/
+        background-color: rgba(25, 109, 149, 0.8);
+        width: 70%;
+        font-size: 24px;
+        padding: 5px 10px 10px 10px;
+    }
+    
+    #leftColHeader {
+        /*background-color: RGBA(237, 45, 119, 0.3);*/
+        background-color: RGBA(127, 91, 115, 0.8);
+        color: #67BAA7;
+        width 30%;
+        font-size: 34px;
+        border-right: 3px solid clear;
+        padding: 20px 10px 0px 10px;
+    }
+    
+    #student {
+        font-size: 20px;
+        color: white;
+    }
+    
+    #leftColTop {
+        background-color: RGBA(127, 91, 115,0.8);
+        color: white;
+        width 30%;
+        font-size: 18px;
+        border-right: 3px solid clear;
+        padding: 5px 10px 10px 10px;
+    }
+    
+   #rightColBotHead {
+        /*background-color: rgba(240,211,255,0.8);*/
+        /*background-color: rgba(88, 117, 160,0.8);*/
+
+        background-color: rgba(88, 117, 160, 0.8);
+        width: 70%;
+        font-size: 20px;
+        padding: 15px;
+        text-align: left;
+    }
+
+    #leftColBotHead {
+        /*background-color: RGBA(193, 136, 173, 0.8);*/
+        background-color: rgba(116, 102, 141, 0.8);
+        width 30%;
+        font-size: 20px;
+        padding: 15px;
+        border-right: 3px solid clear;
+        text-align: left;
+    }
+    
+    #leftColBotHead li {
+        font-size: 22px;
+    }
+    
+    .altered li{
+        font-size: 60px;
+    }
+    
+    .altered #recipeHeader {
+        font-size: 60px;
+    }
+    
+    .aboutHeader {
+        font-size: 40px;
+    }
+    
+    .loves img {
+        overflow-x: hidden;
+        width: 85%;
+        height: auto;
+        border: 14px solid white;
+    }
+
+.dislikes img {
+        overflow-x: hidden;
+        width: 85%;
+        height: auto;
+        border: 14px solid white;
+    }
+
+.likes img {
+        overflow-x: hidden;
+        width: 85%;
+        height: auto;
+        border: 14px solid white;
+    }
+}
+
