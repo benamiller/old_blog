@@ -516,6 +516,12 @@ td.tableDivider {
     color: white;
 }
 
+td.tableDivider:hover {
+    cursor:text;
+    -webkit-filter: brightness(0%);
+   filter: brightness(0%);
+}
+
 @media screen and (max-width: 1000px){
     .fa {
         width: 40px;
