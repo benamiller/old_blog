@@ -464,6 +464,10 @@ iframe {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin: 15px;
+    border-collapse: separate;
+    border-spacing: 5px 4px;
+    
 }
 
 .projectsTable th {
@@ -506,6 +510,12 @@ iframe {
     text-decoration: none;
     color: black;
 }
+
+td.tableDivider {
+    background-color: darkslategrey;
+    color: white;
+}
+
 @media screen and (max-width: 1000px){
     .fa {
         width: 40px;
